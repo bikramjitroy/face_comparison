@@ -10,7 +10,7 @@ services:
       #Uncomment this line to run the example on the GPU (requires Nvidia-Docker)
       # dockerfile: Dockerfile.gpu 
     ports:
-      - "5000:5000"
+            - "8501:8501"
     volumes:
       - /dacx/uploads:/root/uploads
 

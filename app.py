@@ -7,6 +7,9 @@ import uuid
 
 import face_recognition
 
+#serving the flask app
+from waitress import serve
+
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'supersecretkeygoeshere'
@@ -67,3 +70,6 @@ def distance():
         code=1
     ), 200)
 
+if __name__ == "__main__":
+   #app.run() ##Replaced with below code to run it using waitress 
+   serve(app, host='0.0.0.0', port=8501)

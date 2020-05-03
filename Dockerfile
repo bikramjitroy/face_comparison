@@ -36,11 +36,10 @@ RUN cd ~ && \
 
 COPY . /root/
 
-RUN ls -lthr /root
+RUN ls -lthr /root && \
+    pip3 install waitress && \
+    cd /root
 
-RUN cd /root && \
-    export FLASK_APP=app.py
+CMD ["python","app.py"] 
 
-CMD ["flask","run","--host=0.0.0.0"] 
-
-EXPOSE 5000/tcp
+EXPOSE 8501/tcp
