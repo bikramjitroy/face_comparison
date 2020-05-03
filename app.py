@@ -50,9 +50,17 @@ def distance():
             name=requestId + "___" + file.filename
         )
         image = face_recognition.load_image_file("uploads/" + filename)
-        image_encoding = face_recognition.face_encodings(image)[0]
 
-        file_encodings.append(image_encoding)
+        #from encoding pick first face else return with -1
+        image_encoding = face_recognition.face_encodings(image)
+        if (len(image_encoding) < 1):
+            return make_response(jsonify(
+                id=str(requestId),
+                distance=-1,
+                code=0
+            ), 200)
+
+        file_encodings.append(image_encoding[0])
 
         #append image urls
         file_urls.append(photos.url(filename))
