@@ -1,0 +1,16 @@
+version: '2.3'
+
+services:
+  face_comparison:
+    image: face_comparison
+    container_name: face_comparison
+    working_dir: /root
+    build:
+      context: .
+      #Uncomment this line to run the example on the GPU (requires Nvidia-Docker)
+      # dockerfile: Dockerfile.gpu 
+    ports:
+      - "5000:5000"
+    volumes:
+      - /dacx/uploads:/root/uploads
+
