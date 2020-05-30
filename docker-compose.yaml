@@ -1,9 +1,9 @@
 version: '2.3'
 
 services:
-  face_comparison:
-    image: face_comparison
-    container_name: face_comparison
+  video_face_comparison:
+    image: video_face_comparison
+    container_name: video_face_comparison
     working_dir: /root
     build:
       context: .
@@ -12,5 +12,6 @@ services:
     ports:
             - "8501:8501"
     volumes:
-      - /dacx/uploads:/root/uploads
+      - /dacx/videoprocess/face_comparison/face_comparison_uploads:/root/uploads
+      - /dacx/videoprocess/face_comparison/logs:/root/logs
 

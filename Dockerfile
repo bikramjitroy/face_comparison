@@ -32,6 +32,7 @@ RUN cd ~ && \
     pip3 install flask flask-uploads && \
     pip3 install werkzeug==0.15 && \
     mkdir /root/uploads && \
+    mkdir /root/logs && \
     cd /root/
 
 COPY . /root/
