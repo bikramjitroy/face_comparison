@@ -81,7 +81,7 @@ def distance():
         #print("Files:", file_urls)
 
         json_response = jsonify(id=requestId,distance=cal_distance,code=1)
-        app.logger.info('ID: %s response code 1 SUCCESS: distance %d with image1: %s image2: %s',requestId,cal_distance,file_urls[0], file_urls[1])
+        app.logger.info('ID: %s response code 1 SUCCESS: distance %f with image1: %s image2: %s',requestId,cal_distance,file_urls[0], file_urls[1])
         return make_response(json_response, 200)
     except Exception:
         app.logger.exception('ID: %s response code 0 FAILED: exception in code', requestId)

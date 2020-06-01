@@ -1,7 +1,7 @@
 mkdir -p /dacx/videoprocess/face_comparison
 
 cd /dacx/videoprocess/face_comparison
-git clone <face_comparison REPO>
+git clone <face_comparison REPO   https://github.com/bikramjitroy/face_comparison.git  >
 
 mkdir /dacx/videoprocess/face_comparison/face_comparison_uploads 
 mkdir /dacx/videoprocess/face_comparison/logs 
